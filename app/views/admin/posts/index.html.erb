@@ -1,0 +1,15 @@
+<h2>Listing Posts</h2>
+
+<div class="new-record">
+  <%= link_to 'Add new Post', new_admin_post_path %>
+</div>
+
+<ul class="list">
+  <% for post in @posts %>
+   <li>
+     <h3><%= post.title %></h3>
+	 <div class="excerpt"><%= truncate(post,entry, :lenght => 90)%></div>
+   </li>
+  <% end %>
+</ul>
+   
