@@ -1,4 +1,5 @@
 class Admin::PostsController < ApplicationController
+  before_filter :get_current_post, :only => [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -38,6 +39,11 @@ class Admin::PostsController < ApplicationController
     @post =Post.find(params[:id])
     @post.destroy
     redirect_to admin_posts_path
+  end
+  
+  protected
+  def get_current_post
+    @post = Post.find(params[:id])
   end
   
 end
