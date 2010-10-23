@@ -17,4 +17,17 @@ class Admin::PostsController < ApplicationController
    end 
   end
   
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+   @post = Post.find(params[:id])
+   if @post.update_attributes(params[:post])
+     redirect_to admin_posts_path
+   else
+     render :action =>  :edit
+   end
+  end  
+  
 end
