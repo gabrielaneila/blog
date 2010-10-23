@@ -8,7 +8,7 @@
   <% for post in @posts %>
    <li>
      <h3><%= post.title %></h3>
-	 <div class="excerpt"><%= truncate(post,entry, :lenght => 90)%></div>
+	 <div class="excerpt"><%= truncate(post.entry, :lenght => 90)%></div>
    </li>
   <% end %>
 </ul>
