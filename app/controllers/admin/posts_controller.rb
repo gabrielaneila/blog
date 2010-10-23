@@ -4,6 +4,10 @@ class Admin::PostsController < ApplicationController
     @posts = Post.all
   end
   
+  def show
+   @post = Post.find(params[:id])
+  end
+  
   def new
     @post = Post.new
   end
@@ -29,5 +33,11 @@ class Admin::PostsController < ApplicationController
      render :action =>  :edit
    end
   end  
+  
+  def destroy
+    @post =Post.find(params[:id])
+    @post.destroy
+    redirect_to admin_posts_path
+  end
   
 end
