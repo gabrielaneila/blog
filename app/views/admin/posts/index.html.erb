@@ -5,16 +5,7 @@
 </div>
 
 <ul class="list">
-  <% for post in @posts %>
-   <li>
-     <h3><%= link_to post.title, [:admin, post] %></h3>
-	 <div class="excerpt"><%= truncate(post.entry, :lenght => 90)%></div>
-   <div class="actions">
-     <%= link_to 'Edit', [:edit, :admin, post] %>
-     <%= link_to 'Remove', [:admin, post], :method => :delete,
-          :confirm => "Are you sure?" %>
-    </div>
-   </li>
-  <% end %>
+  <%=render @posts %>
 </ul>
+
    

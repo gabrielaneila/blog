@@ -1,0 +1,15 @@
+<ul class="item ">
+  <li>
+	<h3><%= link_to @link.url, [:admin, @post, @link] %></h3>
+	<div class="excerpt"><%= truncate(@link.description, :length => 90) %></div>
+	<div class="actions">
+	  <%= link_to 'Edit', [:edit, :admin,@post, @link] %>
+	  <%= link_to 'Remove', [:admin,@post, @link], :method => :delete, 
+		   :confirm => "Are you sure?" %>
+	</div>
+  </li>
+</ul>
+
+<div class="back">
+  <%= link_to 'Back to listing page', admin_posts_path %>
+</div>

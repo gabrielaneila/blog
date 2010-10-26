@@ -1,0 +1,14 @@
+<h2> Editing Link "<%=@link.url%>" </h2> 
+
+<div class= "form-box">
+  <%= form_for [:admin, @post, @link] do |f| %>
+   <%= render :partial => 'form', :locals => {:f => f} %>
+   
+   <div class="actions">
+	 <%= f.submit :update %>
+	 or
+	 <%= link_to 'cancel', admin_post_path(@post) %>
+   </div>
+
+  <% end %>
+ </div>

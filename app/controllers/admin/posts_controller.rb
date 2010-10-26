@@ -7,6 +7,7 @@ class Admin::PostsController < ApplicationController
   
   def show
    @post = Post.find(params[:id])
+   @links = @post.links
   end
   
   def new

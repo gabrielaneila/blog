@@ -9,8 +9,16 @@
     </div>
   </li>
  </ul>
- 
+
  <div class="back">
    <%= link_to 'Back to listing page', admin_posts_path %>
  </div>
- 	
+ 
+
+<div class="new-record">
+<%= link_to 'Add new Link', new_admin_post_link_path(@post) %>
+</div>
+
+<ul class="list">
+   <%=render @links %>
+ </ul>
